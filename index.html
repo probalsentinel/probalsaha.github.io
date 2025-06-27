@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Probal Saha | CyberWorld</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+  <div id="welcome-screen">
+    <canvas id="matrix-canvas"></canvas>
+    <div class="welcome-text">
+      <h1>Access granted</h1>
+     <h2 id="welcome-typing"><span id="typing-text"></span><span id="cursor">|</span></h2>
+    </div>
+  </div>
+
+  <div id="content-particles"></div>
+
+  <!-- NAVIGATION -->
+<nav class="floating-nav">
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-link active">Home</a></li>
+    <li><a href="#about" class="nav-link">About Me</a></li>
+    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+  </ul>
+
+  <!-- Mobile Hamburger -->
+  <div class="nav-toggle" onclick="toggleMobileMenu()">☰</div>
+
+  <!-- Mobile Dropdown -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About Me</a>
+    <a href="#portfolio" class="mobile-link">Portfolio</a>
+  </div>
+</nav>
+
+  <div id="main-content">
+    
+    <header id="home" class="cyber-header">
+  <div id="cyber-header-particles"></div>
+  <div class="cyber-header-content">
+  <h1>Probal Saha</h1>
+   <p>Cybersecurity Student | Linux Enthusiast</p>
+</div>
+    </header>
+
+  <section id="about" class="box about-box">
+  <div class="about-container">
+    
+    <!-- LEFT: Profile Picture -->
+    <div class="about-image">
+      <img src="images/Owner.png" alt="Probal Saha">
+    </div>
+
+    <!-- RIGHT: Grouped Heading + Button + Text -->
+    <div class="about-right">
+      <h2 class="about-heading">About Me.</h2>
+      <button class="reveal-btn" onclick="showAboutMe()">Click to reveal...</button>
+
+      <!-- Paragraph (hidden initially) -->
+      <div id="about-paragraph" style="display: none; margin-top: 0.5rem;">
+        <p>
+         "In a world where data is power and networks are its lifelines, securing each packet is not just a skill—it's a responsibility."
+        </p>
+<p>I’m Probal Saha, currently pursuing a B.Sc. in Advanced Networking & Cybersecurity at Brainware University. I have a solid foundation in Linux system administration, including user and permission management, file systems, basic shell operations, package handling, and network configuration. My skills also extend to networking fundamentals like TCP/IP, subnetting, IP addressing, and simulation using Cisco Packet Tracer, along with database concepts such as SQL, ER diagrams, and relational algebra.</p>
+
+<p>In cybersecurity, I understand the penetration testing process and have hands-on experience with tools like Nmap, DNSdumpster, Shodan, and Metasploit, including exploiting test environments such as Metasploitable2 and Windows 7 SP1. I’m also familiar with EDR, DLP, encryption, IDS/IPS, VPNs, and various cyber attack vectors like phishing, malware, and MITM.</p>
+
+<p>My goal is to become a cybersecurity professional with strong Linux expertise, capable of identifying and mitigating threats in real-world systems. I aim to combine my knowledge in offensive and defensive security to build safer, more resilient digital infrastructures.</p>
+      </div>
+
+      <!-- ✅ Resume Button inside .about-right -->
+      <a id="resume-button" href="https://drive.google.com/file/d/15idAXwQr-nzNjIvA_saXXyo7VhBxxvar/view" 
+         target="_blank" class="resume-btn" style="display: none;">
+        📄 View My Resume
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <div id="portfolio" class="box">
+      <p style="text-align:center;">Know more about me...</p>
+      <div class="tab-menu">
+  <!-- Skills -->
+<button class="tab-btn" onclick="activateTab(this, 'skills')" title="Skills">
+  <div class="emoji-icon">🛠️</div>
+  <span>Skills</span>
+</button>
+
+
+  <!-- Certifications -->
+<button class="tab-btn" onclick="activateTab(this, 'certs')" title="Certifications">
+   <div class="emoji-icon">🏅</div>
+  <span>Certificates</span>
+</button>
+
+  <!-- Education -->
+  <button class="tab-btn" onclick="activateTab(this, 'edu')" title="Education">
+    <div class="emoji-icon">🎓</div>
+    <span>Education</span>
+  </button>
+
+  <!-- Experience -->
+  <button class="tab-btn" onclick="activateTab(this, 'exp')" title="Experience">
+     <div class="emoji-icon">💼</div>
+    <span>Experience</span>
+  </button>
+      </div>
+    </div>
+
+<!--------------------------------------------------------------------- Skills content ---------------------------------------------------------------------------->
+    <div class="tab-content box" id="skills" style="display: none;">
+  <h2><center><u>My Skills</u></center></h2>
+  <div class="skills-grid" id="skillsGrid"></div>
+</div>
+
+<!------------------------------------------------------------------ Certifications content ----------------------------------------------------------------------->
+<div id="tab-contents">
+  <div class="tab-content box" id="certs" style="display: none;">
+    <h2><center><u>My Certifications</u></center><br></h2>
+   <div class="cert-grid" id="certGrid"></div>
+  </div>
+</div>
+
+    
+<!---------------------------------------------------------------------------Education content ------------------------------------------------------------------->
+<div class="tab-content box" id="edu" style="display: none;">
+  <h2><Center><u>Education</u></Center></h2>
+
+  <!-- Current Course -->
+  <div class="edu-block">
+    <h3>Undergraduate</h3>
+    <h4>B.Sc. in Advanced Networking & Cybersecurity</h4>
+    <p><a href="https://www.brainwareuniversity.ac.in/" target="_blank" style="color: #ffffff !important; text-decoration: underline;">Brainware University</a>
+    <p>Kolkata, West Bengal</p>
+    <p><strong>Total</strong><br>SGPA: 8.30</p>
+    <p><span class="edu-date">📅 2024 to Present</span></p>
+  </div>
+
+  <!-- Higher Secondary -->
+  <div class="edu-block">
+    <h3>Higher Secondary</h3>
+    <h4>Commerce Stream</h4>
+    <p>Udaypur Haradayal Nag Adarshya Vidyalaya</p>
+    <p>North 24 Parganas, West Bengal</p>
+    <p><strong>Total</strong><br>Percentage: 84.2%</p>
+    <p><span class="edu-date">📅 2024</span></p>
+  </div>
+</div>
+
+ <!---------------------------------------------------------------------- Experience content ---------------------------------------------------------------------->
+    <div id="exp" class="tab-content box" style="display: none;">
+  <div class="info-message">
+    I’m currently a student and may not have professional experience yet, but I’m building a solid technical foundation through labs, coursework, and continuous self-learning. I’m actively looking forward to my first opportunity in cybersecurity
+  </div>
+</div>
+
+
+  <div class="box tryhackme-section">
+  <p>You can also check out my <strong><a href="https://tryhackme.com/p/ProbalSecOps" target="_blank">TryHackMe</a></strong> account. </p>
+</div>
+
+    <footer>
+      <br>
+      <br>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: nowrap; margin-bottom: 0.5rem;">
+    <span style="margin-right: 0.5rem;">Contact:</span>
+    <a href="mailto:contact.probalsaha@gmail.com" title="Email">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" width="28" height="28" style="vertical-align: middle;">
+    </a>
+    <a href="https://github.com/probalsentinel" target="_blank" title="GitHub">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" width="28" height="28" style="vertical-align: middle;">
+    </a>
+    <a href="https://www.linkedin.com/in/probalsaha404/" target="_blank" title="LinkedIn">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="28" height="28" style="vertical-align: middle;">
+    </a>
+  </div>
+    <center><p>&copy; 2025 Probal Saha. All rights reserved.</p></center>
+</footer>
+  </div>
+
+  <script src="script.js"></script>
+
+<!-- Abot me -->
+  <script>
+  function showAboutMe() {
+    const para = document.getElementById("about-paragraph");
+    const btn = document.querySelector(".reveal-btn");
+    const resumeBtn = document.getElementById("resume-button"); // ✅ Add this line
+
+    // Check if paragraph exists
+    if (!para) {
+      console.error("Paragraph not found!");
+      return;
+    }
+
+    const typingTarget = para.querySelector("p");
+    const text = typingTarget.textContent.trim();
+
+    typingTarget.textContent = ""; // Clear text
+    para.style.display = "block";  // Show paragraph
+    btn.style.display = "none";    // Hide review button
+
+    let index = 0;
+    function typeChar() {
+      if (index < text.length) {
+        typingTarget.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeChar, 10);
+      } else {
+        // ✅ Show resume button after typing finishes
+        resumeBtn.style.display = "inline-block";
+      }
+    }
+
+    typeChar();
+  }
+</script>
+
+<!-- Button to redirect google drive resume(Style) -->
+<style>
+    .resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.75rem;
+  color: #ffffff;
+  background-color: #c62828;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.resume-btn:hover {
+  background-color: #a30000;
+}
+  </style>
+
+  <style>
+  .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Fits 4 on large screens */
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  margin-top: 1.5rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff5e6;
+  gap: 0.8rem;
+}
+
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 0, 0.08);
+  box-shadow: 0 0 8px #00ff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1);
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+  </style>
+  
+
+</body>
+</html>

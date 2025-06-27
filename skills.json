@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Linux Administration",
+    "icon": "fab fa-linux"
+  },
+  {
+    "name": "Cybersecurity Fundamentals",
+    "icon": "fas fa-shield-alt"
+  },
+  {
+    "name": "Database Management",
+    "icon": "fas fa-database"
+  },
+  {
+    "name": "Network Fundamentals",
+    "icon": "fas fa-network-wired"
+  },
+  {
+    "name": "Python Programming (Basics)",
+    "icon": "fab fa-python"
+  },
+  {
+    "name": "Hardware & Troubleshooting",
+    "icon": "fas fa-tools"
+  }
+]
