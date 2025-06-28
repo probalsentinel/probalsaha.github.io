@@ -35,7 +35,7 @@ Welcome to my personal *portfolio website*, crafted with a blend of creativity, 
 
 ## 🗂 Project Structure
 
-bash
+'''bash
 .
 ├── index.html              # Main HTML page
 ├── style.css               # All custom styles
@@ -44,7 +44,7 @@ bash
 ├── certifications.json     # Certification data
 ├── images/                 # All static images & logos
 └── README.md               # This file
-
+'''
 
 ## 📄 License
 This project is licensed under a *Proprietary License*.  
